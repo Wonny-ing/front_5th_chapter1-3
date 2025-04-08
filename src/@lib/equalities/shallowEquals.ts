@@ -21,10 +21,8 @@ export function shallowEquals<T>(objA: T, objB: T): boolean {
 
     if (keyA.length !== keyB.length) return false;
 
-    return keyA.every((key) => {
-      return objA[key] === objB[key];
-    });
+    return keyA.every((key) => objA[key] === objB[key]);
   }
 
-  return false;
+  return objA === objB;
 }
