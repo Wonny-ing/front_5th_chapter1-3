@@ -30,12 +30,7 @@ export const ThemeProvider: React.FC<PropsWithChildren> = ({ children }) => {
     );
   }, []);
 
-  const value = useMemo(() => {
-    return {
-      theme,
-      toggleTheme,
-    };
-  }, [theme, toggleTheme]);
+  const value = useMemo(() => ({ theme, toggleTheme }), [theme, toggleTheme]);
   return (
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
